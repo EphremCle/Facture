@@ -16,8 +16,7 @@ class FactureTest {
         Facture facture = new Facture(0, null);
 
         Produit prod = new Produit(0, "t", 0, null);
-
-        // AGIS
+      // AGIS
 
         facture.ajouterProduit(prod, 1);
         
@@ -26,7 +25,7 @@ class FactureTest {
         assertEquals(facture.afficherListe(prod, 2), 1, "doit renvoyer 1");
 
     }
-    
+
     @Test
     void listePleine_RemoveElement_Renvoie0() {
 
@@ -58,6 +57,24 @@ class FactureTest {
         // AGIS
 
         // ASSERT
+    }
+
+    void Liste_compteNbrQteTotale_RenvoieNbrQteTotale() {
+
+        Facture facture = new Facture(0, null);
+
+        Produit prod = new Produit(0, "t", 0, null);
+
+        facture.ajouterProduit(prod, 1);
+
+        // AGIS
+
+        facture.getQteProduit(prod);
+
+        //ASSERT 
+
+        assertEquals(facture.getQteProduit(), 1);
+
     }
 
 }

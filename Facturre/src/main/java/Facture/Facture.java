@@ -1,5 +1,6 @@
 package Facture;
 
+import java.security.KeyStore.Entry;
 import java.util.Date;
 import java.util.HashMap;
 
@@ -42,8 +43,13 @@ public class Facture {
         produits.remove(produit, qte);
     }
 
-    public static int getQte() {
-        return qte;
+    public static void getQteProduit() {
+
+        for (Entry entry : produits.entrySet()) {
+            System.out.println("clé: " + mapentry.getKey() + " | valeur: " + mapentry.getValue());
+        }
+
+
     }
 
     
